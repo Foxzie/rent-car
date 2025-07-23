@@ -6,6 +6,7 @@ import "../index.css";
 // Lazy load the Navbar component
 const Navbar = lazy(() => import("../components/navbar"));
 Aos.init();
+
 const Button = (props) => {
   const { children = "Hello Mase", variant = "bg-black" } = props;
   return (
@@ -16,10 +17,10 @@ const Button = (props) => {
 };
 
 function App() {
-  const [clicked, setClicked] = useState(null); // Store the currently clicked image
+  const [clicked, setClicked] = useState(null);
 
   const handleClick = (key) => {
-    setClicked(key); // Set the clicked image to the current one
+    setClicked(key);
   };
 
   return (
@@ -28,116 +29,139 @@ function App() {
         <Navbar />
       </Suspense>
       <br />
-      <div
-        className="mx-auto max-w-6xl px-4 py-6 mt-5"
-        data-aos="fade-up"
-        onLoadStart={() => lazy()}
-      >
-        <h1 className="text-3xl text-amber-400 font-bold text-start underline decoration-amber-400">
-          Welcome To Andrea's Garage!
-        </h1>
-        <div className="float-right ml-5">
-          <img
-            src="https://i.pinimg.com/564x/f2/19/f5/f219f5c529de507a65c22f7a11336db0.jpg"
-            alt="car"
-            className="w-48 h-48 rounded-full shadow-lg bg-none"
-          />
+
+      <div className="mx-auto max-w-6xl px-4 py-6 mt-10" data-aos="fade-up">
+        <div className="flex flex-col md:flex-row items-start">
+          <div className="flex-1">
+            <h1 className="text-3xl md:text-4xl text-amber-400 font-bold text-start underline decoration-amber-400">
+              Welcome To Andrea's Garage!
+            </h1>
+            <h2 className="text-lg md:text-2xl text-white font-bold mt-4">
+              Find comprehensive information about your car, especially if
+              you're looking to buy or sell a used vehicle. We provide insights
+              into market values, maintenance history, and tips for negotiating
+              the best price for a smooth transaction.
+            </h2>
+          </div>
+
+          {/* Image pushed more to the right */}
+          <div className="ml-auto mt-6 md:mt-0 md:ml-8">
+            <img
+              src="https://i.pinimg.com/564x/f2/19/f5/f219f5c529de507a65c22f7a11336db0.jpg"
+              alt="Vintage car showcase at Andrea's Garage"
+              className="w-90 h-50 md:w-52 md:h-52 shadow-2xl border-4 border-amber-400 object-cover"
+            />
+          </div>
         </div>
-        <br />
-        <h2 className="text-2xl text-white font-bold text-start">
-          Here you can find all the information about your car, particularly if
-          you're looking to buy or sell a used vehicle. We offer insights into
-          market values, maintenance history, and tips for negotiating the best
-          price for a smooth transaction.
-        </h2>
-        <br />
+      </div>
+
+      <div className="mx-auto max-w-6xl px-4 py-6" data-aos="fade-left">
+        <h3 className="text-2xl md:text-3xl text-white font-bold text-center">
+          Our Vision
+        </h3>
+        <p className="text-base md:text-lg text-white text-start mt-4">
+          Our vision is to become the leading platform for car enthusiasts,
+          dedicated to providing a seamless and comprehensive experience for
+          buying, selling, and maintaining vehicles. We aim to create a vibrant
+          community where car lovers can connect, share their passion, and
+          access valuable resources that enhance their automotive journey. By
+          offering innovative tools, expert advice, and a user-friendly
+          interface, we strive to empower our users to make informed decisions
+          and enjoy every aspect of vehicle ownership, from the initial purchase
+          to ongoing maintenance and eventual resale
+        </p>
       </div>
 
       <div className="mx-auto max-w-6xl px-4 py-6" data-aos="fade-right">
-        <h3 className="text-3xl text-amber-400 font-bold text-center">
+        <h3 className="text-2xl md:text-3xl text-amber-400 font-bold text-center">
           Our Product
         </h3>
         <br />
-        <div className="flex flex-wrap justify-center">
-          {/* SUV Image */}
-          <div className="w-full sm:w-1/3 p-4 relative group">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* MPV Card */}
+          <div
+            className="relative group cursor-pointer transition-all duration-300"
+            onClick={() => handleClick("mpv")}
+          >
             <div
-              onClick={() => handleClick("mpv")}
-              className={`cursor-pointer transition-transform duration-300 ease-in-out ${
-                clicked === "mpv" ? "scale-105" : ""
+              className={`overflow-hidden rounded-lg shadow-lg ${
+                clicked === "mpv" ? "ring-4 ring-blue-500" : ""
               }`}
             >
               <img
                 src="https://i.pinimg.com/1200x/d0/27/14/d0271487634e2765bfbaaf97442c239f.jpg"
-                alt="SUV"
-                className="w-full h-80 object-cover rounded shadow-lg bg-none transition-transform duration-300 ease-in-out group-hover:scale-105"
+                alt="Premium MPV vehicle"
+                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <p
-                className={`font-bold text-2xl underline text-center mt-2 transition-transform duration-300 ease-in-out ${
-                  clicked === "mpv"
-                    ? "text-blue-500 scale-105"
-                    : "text-amber-400"
-                } group-hover:text-blue-500 group-hover:scale-105`}
-              >
-                MPV
-              </p>
             </div>
+            <h4
+              className={`text-xl md:text-2xl font-bold mt-4 text-center ${
+                clicked === "mpv" ? "text-blue-500" : "text-amber-400"
+              } underline`}
+            >
+              MPV
+            </h4>
           </div>
 
-          {/* Sedan Image */}
-          <div className="w-full sm:w-1/3 p-4 relative group">
+          {/* Sedan Card */}
+          <div
+            className="relative group cursor-pointer transition-all duration-300"
+            onClick={() => handleClick("sedan")}
+          >
             <div
-              onClick={() => handleClick("sedan")}
-              className={`cursor-pointer transition-transform duration-300 ease-in-out ${
-                clicked === "sedan" ? "scale-105" : ""
+              className={`overflow-hidden rounded-lg shadow-lg ${
+                clicked === "sedan" ? "ring-4 ring-blue-500" : ""
               }`}
             >
               <img
-                src="https://i.pinimg.com/564x/f2/19/f5/f219f5c529de507a65c22f7a11336db0.jpg" // Updated Sedan Image
-                alt="Sedan"
-                className="w-full h-80 object-cover rounded shadow-lg bg-none transition-transform duration-300 ease-in-out group-hover:scale-105"
+                src="https://i.pinimg.com/564x/f2/19/f5/f219f5c529de507a65c22f7a11336db0.jpg"
+                alt="Luxury sedan car"
+                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <p
-                className={`font-bold text-2xl underline text-center mt-2 transition-transform duration-300 ease-in-out ${
-                  clicked === "sedan"
-                    ? "text-blue-500 scale-105"
-                    : "text-amber-400"
-                } group-hover:text-blue-500 group-hover:scale-105`}
-              >
-                Sedan
-              </p>
             </div>
+            <h4
+              className={`text-xl md:text-2xl font-bold mt-4 text-center ${
+                clicked === "sedan" ? "text-blue-500" : "text-amber-400"
+              } underline`}
+            >
+              Sedan
+            </h4>
           </div>
 
-          {/* Trucks Image */}
-          <div className="w-full sm:w-1/3 p-4 relative group">
+          {/* Truck Card */}
+          <div
+            className="relative group cursor-pointer transition-all duration-300"
+            onClick={() => handleClick("trucks")}
+          >
             <div
-              onClick={() => handleClick("trucks")}
-              className={`cursor-pointer transition-transform duration-300 ease-in-out ${
-                clicked === "trucks" ? "scale-105" : ""
+              className={`overflow-hidden rounded-lg shadow-lg ${
+                clicked === "trucks" ? "ring-4 ring-blue-500" : ""
               }`}
             >
               <img
                 src="https://i.pinimg.com/736x/74/fa/20/74fa20185736d2feccd8e801f845d4e6.jpg"
-                alt="Trucks"
-                className="w-full h-80 object-cover rounded shadow-lg bg-none transition-transform duration-300 ease-in-out group-hover:scale-105"
+                alt="Heavy duty truck"
+                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <p
-                className={`font-bold text-2xl underline text-center mt-2 transition-transform duration-300 ease-in-out ${
-                  clicked === "trucks"
-                    ? "text-blue-500 scale-105"
-                    : "text-amber-400"
-                } group-hover:text-blue-500 group-hover:scale-105`}
-              >
-                Trucks
-              </p>
             </div>
+            <h4
+              className={`text-xl md:text-2xl font-bold mt-4 text-center ${
+                clicked === "trucks" ? "text-blue-500" : "text-amber-400"
+              } underline`}
+            >
+              Trucks
+            </h4>
           </div>
         </div>
-        <br />
-        <Button variant="bg-blue-500">Click Me</Button>
-        <Button variant="bg-green-500">Click Me</Button>
-        <Button variant="bg-red-500">Click Me</Button>
+
+        <div className="flex justify-center space-x-4 mt-8">
+          <Button variant="bg-blue-600 hover:bg-blue-700 transition-colors">
+            View Inventory
+          </Button>
+          <Button variant="bg-amber-600 hover:bg-amber-700 transition-colors">
+            Contact Us
+          </Button>
+        </div>
       </div>
     </>
   );
