@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 // Lazy load components
 const Navbar = lazy(() => import("../components/navbar"));
 const Footer = lazy(() => import("../components/footer"));
-Aos.init();
+
+Aos.init({});
 
 const Button = ({ children, variant = "bg-gray-900", link }) =>
   link ? (
