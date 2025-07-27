@@ -5,6 +5,18 @@ import "aos/dist/aos.css";
 const About = () => {
   const Footer = lazy(() => import("../components/footer"));
 
+  const NewTabLink = ({ to, children, className }) => (
+    <div
+      className={`relative group cursor-pointer transition-all duration-500 ${className}`}
+      onClick={(e) => {
+        e.preventDefault();
+        window.open(to, "_blank");
+      }}
+    >
+      {children}
+    </div>
+  );
+
   useEffect(() => {
     Aos.init({});
   }, []);
@@ -157,9 +169,12 @@ const About = () => {
               for their mobility needs.
             </p>
             <div className="flex justify-center">
-              <button className="px-8 py-3 bg-gray-900 text-white rounded-lg shadow cursor-pointer hover:bg-gray-800 transition-colors">
+              <NewTabLink
+                to="https://your-booking-link.com"
+                className="px-8 py-3 bg-gray-900 text-white rounded-lg shadow hover:bg-gray-800 transition-colors"
+              >
                 Book Your Vehicle Now
-              </button>
+              </NewTabLink>
             </div>
           </div>
         </div>
