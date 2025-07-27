@@ -2,14 +2,22 @@ import React, { Suspense, lazy, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "../index.css";
+import { Link } from "react-router-dom";
 
 // Lazy load the Navbar component
 const Navbar = lazy(() => import("../components/navbar"));
+const Footer = lazy(() => import("../components/footer"));
 Aos.init();
 
 const Button = (props) => {
-  const { children = "Hello Mase", variant = "bg-black" } = props;
-  return (
+  const { children, variant = "bg-black", link } = props;
+
+  // If a link is provided, render a Link component; otherwise, render a button
+  return link ? (
+    <Link to={link} className={`px-4 py-2 text-white ${variant} rounded`}>
+      {children}
+    </Link>
+  ) : (
     <button className={`px-4 py-2 text-white ${variant} rounded`}>
       {children}
     </button>
@@ -30,7 +38,10 @@ function App() {
       </Suspense>
       <br />
 
-      <div className="mx-auto max-w-6xl px-4 py-6 mt-10" data-aos="fade-up">
+      <div
+        className="mx-auto max-w-11xl px-4 py-6 mt-8 bg-gray-600"
+        data-aos="fade-up"
+      >
         <div className="flex flex-col md:flex-row items-start">
           <div className="flex-1">
             <h1 className="text-3xl md:text-4xl text-amber-400 font-bold text-start underline decoration-amber-400">
@@ -45,7 +56,7 @@ function App() {
           </div>
 
           {/* Image pushed more to the right */}
-          <div className="ml-auto mt-6 md:mt-0 md:ml-8">
+          <div className="ml-auto mt-6 md:mt- md:ml-8">
             <img
               src="https://i.pinimg.com/564x/f2/19/f5/f219f5c529de507a65c22f7a11336db0.jpg"
               alt="Vintage car showcase at Andrea's Garage"
@@ -68,11 +79,22 @@ function App() {
           offering innovative tools, expert advice, and a user-friendly
           interface, we strive to empower our users to make informed decisions
           and enjoy every aspect of vehicle ownership, from the initial purchase
-          to ongoing maintenance and eventual resale
+          to ongoing maintenance and eventual resale.
         </p>
+        <div className="flex justify-center mt-6">
+          <Button
+            variant="bg-blue-600 hover:bg-blue-700 cursor-pointer transition-colors"
+            link="/about" // Pass the link prop here
+          >
+            Learn More
+          </Button>
+        </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 py-6" data-aos="fade-right">
+      <div
+        className="mx-auto max-w-11xl px-4 py-6 bg-emerald-800"
+        data-aos="fade-right"
+      >
         <h3 className="text-2xl md:text-3xl text-amber-400 font-bold text-center">
           Our Product
         </h3>
@@ -153,16 +175,10 @@ function App() {
             </h4>
           </div>
         </div>
-
-        <div className="flex justify-center space-x-4 mt-8">
-          <Button variant="bg-blue-600 hover:bg-blue-700 transition-colors">
-            View Inventory
-          </Button>
-          <Button variant="bg-amber-600 hover:bg-amber-700 transition-colors">
-            Contact Us
-          </Button>
-        </div>
       </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Footer />
+      </Suspense>
     </>
   );
 }
