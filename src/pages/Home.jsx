@@ -73,10 +73,10 @@ function App() {
                 <span className="font-extrabold">Andrea's Garage</span>
               </h1>
               <p className="text-lg lg:text-xl text-gray-200 mb-8">
-                Your premier destination for comprehensive vehicle information.
-                Whether buying or selling used cars, we provide market insights,
-                maintenance history, and expert negotiation tips for seamless
-                transactions.
+                Your premier destination for comprehensive vehicle rental
+                information. Whether renting or leasing vehicles, we provide
+                market insights, maintenance history, and expert negotiation
+                tips for seamless transactions.
               </p>
               <Button
                 variant="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700"
@@ -110,10 +110,11 @@ function App() {
             </h2>
             <div className="h-1 w-24 bg-amber-500 mx-auto mb-8 rounded-full" />
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              We're redefining the automotive experience by creating a platform
-              that connects car enthusiasts worldwide. Through innovative tools,
-              expert insights, and a vibrant community, we empower your vehicle
-              ownership journey from purchase to maintenance and beyond.
+              We're redefining the automotive rental experience by creating a
+              platform that connects car enthusiasts worldwide. Through
+              innovative tools, expert insights, and a vibrant community, we
+              empower your vehicle rental journey from selection to maintenance
+              and beyond.
             </p>
             <Button variant="bg-blue-600 hover:bg-blue-700" link="/about">
               Explore Our Story
@@ -129,7 +130,7 @@ function App() {
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Our <span className="text-amber-400">Premium</span> Selection
+              Our <span className="text-amber-400">Services</span> Selection
             </h2>
             <p className="text-lg text-gray-200 max-w-2xl mx-auto">
               Discover our curated collection of exceptional vehicles tailored
