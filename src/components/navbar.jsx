@@ -42,13 +42,13 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="/product"
+                  to="/services"
                   className="text-amber-100 hover:text-amber-800 text-lg font-medium"
                   onClick={() => {
-                    handleTitleChange("Products - Andrea's Garage");
+                    handleTitleChange("Services - Andrea's Garage");
                   }}
                 >
-                  Product
+                  Services
                 </Link>
               </li>
               <li>
