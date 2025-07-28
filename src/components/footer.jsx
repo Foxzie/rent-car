@@ -21,9 +21,9 @@ const Footer = () => {
           <a
             href="#"
             className="text-gray-300 hover:text-white transition-colors duration-300"
-            aria-label="Email"
+            aria-label="WhatsApp"
           >
-            <i className="bi bi-envelope-fill text-xl md:text-2xl"></i>
+            <i className="bi bi-whatsapp text-xl md:text-2xl"></i>
           </a>
           <a
             href="#"
