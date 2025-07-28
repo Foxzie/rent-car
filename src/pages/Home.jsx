@@ -133,8 +133,8 @@ function App() {
               Our <span className="text-amber-400">Services</span> Selection
             </h2>
             <p className="text-lg text-gray-200 max-w-2xl mx-auto">
-              Discover our curated collection of exceptional vehicles tailored
-              to your needs.
+              Choose your perfect rental from our curated collection of
+              exceptional vehicles tailored to your needs.
             </p>
           </div>
 
