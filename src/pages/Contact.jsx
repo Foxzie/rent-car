@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useState } from "react";
 import "aos/dist/aos.css"; // Ensure you import AOS CSS
 import AOS from "aos"; // Import AOS
 import emailjs from "@emailjs/browser"; // Import EmailJS
+
 // Initialize AOS
 AOS.init();
 
@@ -78,8 +79,12 @@ const Contact = () => {
           </p>
         </div>
         <div
-          className="container mx-auto max-w-2xl mt-10 p-8 bg-white rounded-3xl shadow-2xl text-zinc-800"
+          className="container mx-auto max-w-2xl mt-10 p-8 bg-white rounded-3xl shadow-lg text-zinc-800"
           data-aos="zoom-in"
+          style={{
+            background: "rgba(255, 255, 255, 0.9)", // Slightly transparent white background
+            backdropFilter: "blur(10px)", // Optional: adds a blur effect to the background
+          }}
         >
           <form onSubmit={handleSubmit}>
             <label
@@ -95,7 +100,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               className={`mt-1 block w-full rounded-lg bg-gray-100 border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3 transition duration-200 ease-in-out ${
-                errors.name ? "border-red-500" : ""
+                errors.name ? "border-red-500" : "border-gray-300"
               }`}
               placeholder="John Doe"
             />
@@ -116,7 +121,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               className={`mt-1 block w-full rounded-lg bg-gray-100 border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3 transition duration-200 ease-in-out ${
-                errors.email ? "border-red-500" : ""
+                errors.email ? "border-red-500" : "border-gray-300"
               }`}
               placeholder="john.doe@example.com"
             />
@@ -137,7 +142,7 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               className={`mt-1 block w-full rounded-lg bg-gray-100 border-gray-300 shadow-sm focus:border-amber-400 focus:ring-amber-400 p-3 transition duration-200 ease-in-out ${
-                errors.message ? "border-red-500" : ""
+                errors.message ? "border-red-500" : "border-gray-300"
               }`}
               placeholder="Your message here..."
             />
