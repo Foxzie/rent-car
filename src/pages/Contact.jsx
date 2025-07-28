@@ -1,8 +1,7 @@
 import React, { Suspense, lazy, useState } from "react";
 import "aos/dist/aos.css"; // Ensure you import AOS CSS
 import AOS from "aos"; // Import AOS
-import emailjs from "emailjs-com"; // Import EmailJS
-
+import emailjs from "@emailjs/browser"; // Import EmailJS
 // Initialize AOS
 AOS.init();
 
@@ -36,7 +35,12 @@ const Contact = () => {
     if (validateForm()) {
       // Send email using EmailJS
       emailjs
-        .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData, "YOUR_USER_ID")
+        .send(
+          "service_i35z1hd",
+          "template_8woze8z",
+          formData,
+          "KQ_TnlY2LNKStp8uz"
+        )
         .then((response) => {
           console.log(
             "Email sent successfully!",
