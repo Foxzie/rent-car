@@ -1,55 +1,55 @@
 import React, { Suspense } from "react"; // Import Suspense
 
-// Data dummy untuk produk Sedan Anda
-const mpvProducts = [
+// Dummy data for your Sedan products
+const sedanProducts = [
   {
     id: 1,
     name: "Toyota Camry - Luxury Sedan",
     description:
-      "Experience refined elegance and superior comfort with our luxury Toyota Camry. Ideal for executive travel and long family trips, it offers plush seating for four, advanced infotainment, and a serene ride.", // Deskripsi diperbarui
+      "Experience refined elegance and superior comfort with our luxury **Toyota Camry**. Perfect for executive travel, special occasions, or long family trips, it offers plush seating for four, advanced infotainment, and a serene ride.", // Updated description in English
     imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Luxury+Sedan", // Placeholder, ganti dengan gambar asli
+      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Luxury+Sedan", // Placeholder, replace with actual image
     features: [
       "4 Seater",
       "Premium Audio",
       "Executive Comfort",
       "Advanced Safety",
-    ], // Fitur diperbarui
-    price: "Mulai Rp 800.000/hari",
+    ], // Features updated
+    price: "Starts from Rp 800,000/day", // Price updated
   },
   {
     id: 2,
     name: "Toyota Vios - Standard Sedan",
     description:
-      "Our reliable Toyota Vios is the perfect standard sedan for daily commutes, city tours, or small group travel. It's economical, fuel-efficient, and offers a comfortable, agile ride for urban environments.", // Deskripsi diperbarui
+      "Our reliable **Toyota Vios** is the perfect standard sedan for daily commutes, city tours, or small group travel. It's economical, fuel-efficient, and offers a comfortable, agile ride for urban environments.", // Updated description in English
     imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Standard+Sedan", // Placeholder, ganti dengan gambar asli
+      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Standard+Sedan", // Placeholder, replace with actual image
     features: [
       "4 Seater",
       "Fuel Efficient",
       "Compact & Agile",
       "Child Seat Ready",
-    ], // Fitur diperbarui
-    price: "Mulai Rp 550.000/hari",
+    ], // Features updated
+    price: "Starts from Rp 550,000/day", // Price updated
   },
   {
     id: 3,
     name: "Honda Civic Type R - Sport Sedan",
     description:
-      "Unleash exhilarating performance with the Honda Civic Type R sport sedan. Designed for thrill-seekers, it combines aggressive styling with powerful engineering, offering dynamic handling and a responsive drive.", // Deskripsi diperbarui
+      "Unleash exhilarating performance with the **Honda Civic Type R** sport sedan. Designed for thrill-seekers, it combines aggressive styling with powerful engineering, offering dynamic handling and a responsive drive.", // Updated description in English
     imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Sport+Sedan", // Placeholder, ganti dengan gambar asli
+      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Sport+Sedan", // Placeholder, replace with actual image
     features: [
       "4 Seater",
       "High Performance Engine",
       "Sport Suspension",
       "Aerodynamic Design",
-    ], // Fitur diperbarui
-    price: "Mulai Rp 700.000/hari",
+    ], // Features updated
+    price: "Starts from Rp 700,000/day", // Price updated
   },
 ];
 
-// NewTabLink komponen sesuai format Anda
+// NewTabLink component as per your format
 const NewTabLink = ({ to, children, className }) => (
   <div
     className={`relative group cursor-pointer transition-all duration-500 ${className}`}
@@ -62,41 +62,41 @@ const NewTabLink = ({ to, children, className }) => (
   </div>
 );
 
-const Mpv = () => {
-  const title = "Our Sedan Services - Andrea's Garage"; // Title updated for consistency
+const Sedan = () => {
+  const title = "Our Sedan Services - Andrea's Garage"; // Title updated to English
   document.title = title;
 
   // Lazily load the Footer component
-  // Path ini tetap "/src/components/footer" sesuai permintaan Anda
+  // Path remains "/src/components/footer" as per your request
   const Footer = React.lazy(() => import("/src/components/footer"));
 
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
-        {/* Sesi Judul Utama */}
+        {/* Main Title Section */}
         <div
           className="max-w-4xl w-full text-center mb-12"
           data-aos="fade-up" // AOS animation for the whole title section
           data-aos-duration="1000"
         >
           <br />
-          {/* AOS tetap dipertahankan pada parent div */}
+          {/* AOS retained on parent div */}
           <h1 className="text-5xl md:text-5xl font-extrabold text-amber-400 drop-shadow-lg mb-4">
-            Pilihan Sedan Terbaik untuk Anda
+            Our Best Sedan Choices for You
           </h1>{" "}
-          {/* Heading updated for consistency */}
+          {/* Heading updated to English */}
           <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-            Temukan kenyamanan dan fleksibilitas tak tertandingi dengan beragam
-            pilihan Sedan kami, siap menemani setiap perjalanan Anda.
+            Discover unparalleled comfort and flexibility with our diverse
+            selection of Sedans, ready to accompany you on every journey.
           </p>{" "}
-          {/* Paragraph updated for consistency */}
+          {/* Paragraph updated to English */}
         </div>
 
         {/* --- */}
 
-        {/* Sesi Produk MPV */}
+        {/* Sedan Products Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {mpvProducts.map((product, index) => (
+          {sedanProducts.map((product, index) => (
             <div
               key={product.id}
               className="bg-gray-900 rounded-xl shadow-2xl overflow-hidden border border-gray-700 transform hover:scale-105 transition-transform duration-300 ease-in-out group"
@@ -129,15 +129,11 @@ const Mpv = () => {
                 <p className="text-xl font-semibold text-gray-100 mb-6">
                   {product.price}
                 </p>
-                {/* FIX: NewTabLink langsung menerima semua kelas styling tombol */}
                 <NewTabLink
-                  to="/rent" // Target URL untuk tab baru
+                  to="/rent" // Target URL for new tab
                   className="w-full bg-amber-500 text-gray-900 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-amber-400 transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-opacity-50 text-center block"
-                  // 'text-center' dan 'block' memastikan gaya tombol penuh lebar dan teks di tengah
-                  // 'onClick' yang memanggil handleTitleChange dihapus karena tidak didefinisikan
-                  // dan tidak relevan untuk navigasi tab baru
                 >
-                  Pesan Sekarang
+                  Book Now
                 </NewTabLink>
               </div>
             </div>
@@ -152,4 +148,4 @@ const Mpv = () => {
   );
 };
 
-export default Mpv;
+export default Sedan;
