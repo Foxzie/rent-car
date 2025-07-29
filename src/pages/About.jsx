@@ -5,6 +5,10 @@ import "aos/dist/aos.css";
 const About = () => {
   const Footer = lazy(() => import("../components/footer"));
 
+  const handleTitleChange = (title) => {
+    document.title = title; // Set the document title
+  };
+
   const NewTabLink = ({ to, children, className }) => (
     <div
       className={`relative group cursor-pointer transition-all duration-500 ${className}`}
@@ -170,8 +174,11 @@ const About = () => {
             </p>
             <div className="flex justify-center">
               <NewTabLink
-                to="https://your-booking-link.com"
+                to="/rent"
                 className="px-8 py-3 bg-gray-900 text-white rounded-lg shadow hover:bg-gray-800 transition-colors"
+                onClick={() => {
+                  handleTitleChange("Book Your Vehicle - Andrea's Garage");
+                }}
               >
                 Book Your Vehicle Now
               </NewTabLink>
