@@ -76,7 +76,7 @@ const Services = () => {
               return (
                 <NewTabLink
                   key={type}
-                  to={`/products/${type}`}
+                  to={`/services/${type}`}
                   className="group transform hover:-translate-y-1 transition-transform duration-300"
                   data-aos="fade-left"
                   data-aos-delay={index * 300 + 500} // Increased delay for better staggering
