@@ -9,6 +9,7 @@ import Mpv from "../pages/services/mpv";
 import Pickup from "../pages/services/pickup";
 import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound"; // Assuming you have a NotFound component
+import Rent from "../pages/Rent"; // Assuming you have a Buy component
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/services/pickup" element={<Pickup />} />{" "}
         {/* Corrected path */}
         <Route path="/contact" element={<Contact />} />
+        <Route path="/rent" element={<Rent />} />
         <Route path="*" element={<NotFound />} /> {/* Catch-all for 404 */}
       </Routes>
     </BrowserRouter>
