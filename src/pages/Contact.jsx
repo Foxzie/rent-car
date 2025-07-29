@@ -159,7 +159,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      <br />
+
       <Suspense fallback={<div>Loading...</div>}>
         <Footer />
       </Suspense>
