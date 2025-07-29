@@ -1,29 +1,32 @@
 import React, { Suspense, lazy, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link for internal navigation
 import Aos from "aos";
 import "aos/dist/aos.css";
 
 const About = () => {
   const Footer = lazy(() => import("../components/footer"));
 
-  const handleTitleChange = (title) => {
-    document.title = title; // Set the document title
-  };
-
-  const NewTabLink = ({ to, children, className }) => (
-    <div
+  // Modified NewTabLink to InternalLink for in-app navigation
+  // It now uses react-router-dom's Link component
+  const InternalLink = (
+    { to, children, className, onClick } // Add onClick prop
+  ) => (
+    <Link
+      to={to}
       className={`relative group cursor-pointer transition-all duration-500 ${className}`}
-      onClick={(e) => {
-        e.preventDefault();
-        window.open(to, "_blank");
-      }}
+      onClick={onClick} // Pass onClick to Link component
     >
       {children}
-    </div>
+    </Link>
   );
 
   useEffect(() => {
     Aos.init({});
   }, []);
+
+  const handleBookNowClick = () => {
+    document.title = "Services - Andrea's Garage"; // Change the title
+  };
 
   return (
     <>
@@ -173,15 +176,14 @@ const About = () => {
               for their mobility needs.
             </p>
             <div className="flex justify-center">
-              <NewTabLink
-                to="/rent"
+              {/* Added onClick handler here */}
+              <InternalLink
+                to="/services"
                 className="px-8 py-3 bg-gray-900 text-white rounded-lg shadow hover:bg-gray-800 transition-colors"
-                onClick={() => {
-                  handleTitleChange("Book Your Vehicle - Andrea's Garage");
-                }}
+                onClick={handleBookNowClick} // Call the function to change title
               >
                 Book Your Vehicle Now
-              </NewTabLink>
+              </InternalLink>
             </div>
           </div>
         </div>
