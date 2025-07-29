@@ -5,7 +5,7 @@ import "../index.css";
 import { Link } from "react-router-dom";
 
 // Lazy load components
-const Navbar = lazy(() => import("../components/navbar"));
+import Navbar from "../components/Navbar";
 const Footer = lazy(() => import("../components/footer"));
 
 Aos.init({});
@@ -49,15 +49,7 @@ const NewTabLink = ({ to, children, className }) => (
 function App() {
   return (
     <div className="min-h-screen bg-gray-900">
-      <Suspense
-        fallback={
-          <div className="min-h-screen flex items-center justify-center">
-            Loading...
-          </div>
-        }
-      >
-        <Navbar />
-      </Suspense>
+      <Navbar />
 
       <main className="container mx-auto px-4 py-8">
         {/* Hero Section */}
