@@ -153,7 +153,7 @@ function App() {
               return (
                 <NewTabLink
                   key={type}
-                  to={`/products/${type}`}
+                  to={`/services/${type}`}
                   className="group transform hover:-translate-y-2 transition-transform duration-300"
                 >
                   <div className="bg-gray-900 bg-opacity-50 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl border border-gray-700 hover:border-amber-400 transition-all">
