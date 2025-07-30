@@ -74,7 +74,7 @@ const About = () => {
               </div>
               <div className="md:w-1/2">
                 <img
-                  src="https://i.pinimg.com/564x/f2/19/f5/f219f5c529de507a65c22f7a11336db0.jpg"
+                  src="/src/assets/premiumsedancartun.jpg"
                   alt="Andrea's Garage Fleet"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
