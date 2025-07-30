@@ -72,6 +72,9 @@ const allCarProducts = [
   },
 ];
 
+const title = "Rent A Car - Andrea's Garage";
+document.title = title;
+
 const Rent = () => {
   useEffect(() => {
     AOS.init({
