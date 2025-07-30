@@ -1,12 +1,14 @@
 import React, { Suspense } from "react"; // Import Suspense
+import AOS from "aos"; // Import AOS for initialization
+import "aos/dist/aos.css"; // Import AOS styles
 
 // Dummy data for your Pickup products
 const pickupProducts = [
   {
-    id: 1,
-    name: "Ford Ranger - Heavy-Duty Pickup", // Updated for Pickup
+    id: "ford-ranger", // Changed ID to a more descriptive string
+    name: "Ford Ranger - Heavy-Duty Pickup",
     description:
-      "Tackle any challenge with our rugged **Ford Ranger**. Engineered for heavy loads and rough terrain, this powerful pickup offers exceptional towing capacity, advanced off-road features, and a spacious cabin for both work and adventure.", // Pickup description in English
+      "Tackle any challenge with our rugged **Ford Ranger**. Engineered for heavy loads and rough terrain, this powerful pickup offers exceptional towing capacity, advanced off-road features, and a spacious cabin for both work and adventure.",
     imageUrl:
       "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Heavy-Duty+Pickup", // Placeholder, replace with actual image
     features: [
@@ -14,14 +16,14 @@ const pickupProducts = [
       "High Towing Capacity",
       "4x4 Drivetrain",
       "Off-Road Ready",
-    ], // Pickup features in English
-    price: "Starts from Rp 950,000/day", // Price adapted for English
+    ],
+    price: "Starts from Rp 950,000/day",
   },
   {
-    id: 2,
-    name: "Toyota Hilux - Versatile Pickup", // Updated for Pickup
+    id: "toyota-hilux", // Changed ID to a more descriptive string
+    name: "Toyota Hilux - Versatile Pickup",
     description:
-      "Our versatile **Toyota Hilux** is built for reliability and adaptability. Perfect for both commercial hauling and adventurous excursions, it combines robust performance with comfortable interiors and superior durability.", // Pickup description in English
+      "Our versatile **Toyota Hilux** is built for reliability and adaptability. Perfect for both commercial hauling and adventurous excursions, it combines robust performance with comfortable interiors and superior durability.",
     imageUrl:
       "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Versatile+Pickup", // Placeholder, replace with actual image
     features: [
@@ -29,14 +31,14 @@ const pickupProducts = [
       "Fuel Efficient",
       "Large Cargo Bed",
       "Durable Build",
-    ], // Pickup features in English
-    price: "Starts from Rp 750,000/day", // Price adapted for English
+    ],
+    price: "Starts from Rp 750,000/day",
   },
   {
-    id: 3,
-    name: "Mitsubishi Triton - Sporty Pickup", // Updated for Pickup
+    id: "mitsubishi-triton", // Changed ID to a more descriptive string
+    name: "Mitsubishi Triton - Sporty Pickup",
     description:
-      "Experience dynamic performance and sleek design with the **Mitsubishi Triton**. This sporty pickup offers a comfortable ride for daily use and the power needed for weekend escapades, featuring modern amenities and advanced handling.", // Pickup description in English
+      "Experience dynamic performance and sleek design with the **Mitsubishi Triton**. This sporty pickup offers a comfortable ride for daily use and the power needed for weekend escapades, featuring modern amenities and advanced handling.",
     imageUrl:
       "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Sporty+Pickup", // Placeholder, replace with actual image
     features: [
@@ -44,8 +46,8 @@ const pickupProducts = [
       "Powerful Engine",
       "Sport Suspension",
       "Stylish Design",
-    ], // Pickup features in English
-    price: "Starts from Rp 850,000/day", // Price adapted for English
+    ],
+    price: "Starts from Rp 850,000/day",
   },
 ];
 
@@ -63,11 +65,19 @@ const NewTabLink = ({ to, children, className }) => (
 );
 
 const Pickup = () => {
-  const title = "Our Pickup Services - Andrea's Garage"; // Page title updated to English
+  // Initialize AOS when the component mounts
+  React.useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      easing: "ease-in-out",
+    });
+  }, []);
+
+  const title = "Our Pickup Services - Andrea's Garage";
   document.title = title;
 
   // Lazily load the Footer component
-  // Path remains "/src/components/footer" as per your request
   const Footer = React.lazy(() => import("/src/components/footer"));
 
   return (
@@ -80,16 +90,13 @@ const Pickup = () => {
           data-aos-duration="1000"
         >
           <br />
-          {/* AOS retained on parent div */}
           <h1 className="text-5xl md:text-5xl font-extrabold text-amber-400 drop-shadow-lg mb-4">
             Our Best Pickup Choices for You
-          </h1>{" "}
-          {/* Heading updated to English */}
+          </h1>
           <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
             Discover unmatched strength and durability with our diverse
             selection of Pickup vehicles, ready for any adventure or job.
-          </p>{" "}
-          {/* Paragraph updated to English */}
+          </p>
         </div>
 
         {/* --- */}
@@ -129,8 +136,11 @@ const Pickup = () => {
                 <p className="text-xl font-semibold text-gray-100 mb-6">
                   {product.price}
                 </p>
+                {/* Modified NewTabLink to pass carType and carName */}
                 <NewTabLink
-                  to="/rent" // Target URL for new tab
+                  to={`/rent?carType=${product.id}&carName=${encodeURIComponent(
+                    product.name
+                  )}`} // Pass ID and Name
                   className="w-full bg-amber-500 text-gray-900 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-amber-400 transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-opacity-50 text-center block"
                 >
                   Book Now
