@@ -9,8 +9,7 @@ const sedanProducts = [
     name: "Toyota Camry - Luxury Sedan",
     description:
       "Experience refined elegance and superior comfort with our luxury **Toyota Camry**. Perfect for executive travel, special occasions, or long family trips, it offers plush seating for four, advanced infotainment, and a serene ride.", // Updated description in English
-    imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Luxury+Sedan", // Placeholder, replace with actual image
+    imageUrl: "/src/assets/product/camry.jpeg", // Placeholder, replace with actual image
     features: [
       "4 Seater",
       "Premium Audio",
@@ -24,8 +23,7 @@ const sedanProducts = [
     name: "Toyota Vios - Standard Sedan",
     description:
       "Our reliable **Toyota Vios** is the perfect standard sedan for daily commutes, city tours, or small group travel. It's economical, fuel-efficient, and offers a comfortable, agile ride for urban environments.", // Updated description in English
-    imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Standard+Sedan", // Placeholder, replace with actual image
+    imageUrl: "/src/assets/product/vios.jpeg", // Placeholder, replace with actual image
     features: [
       "4 Seater",
       "Fuel Efficient",
@@ -39,8 +37,7 @@ const sedanProducts = [
     name: "Honda Civic Type R - Sport Sedan",
     description:
       "Unleash exhilarating performance with the **Honda Civic Type R** sport sedan. Designed for thrill-seekers, it combines aggressive styling with powerful engineering, offering dynamic handling and a responsive drive.", // Updated description in English
-    imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Sport+Sedan", // Placeholder, replace with actual image
+    imageUrl: "/src/assets/product/civictyper.jpeg", // Placeholder, replace with actual image
     features: [
       "4 Seater",
       "High Performance Engine",
