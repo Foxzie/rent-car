@@ -11,8 +11,7 @@ const mpvProducts = [
     name: "Toyota Alphard - Luxury MPV",
     description:
       "Ideal for executive travel and long family trips. Features premium leather seats and advanced infotainment.",
-    imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Luxury+MPV",
+    imageUrl: "/src/assets/product/alphard.jpeg",
     features: ["7 Seater", "GPS & WiFi", "Spacious Interior"],
     price: "Mulai Rp 800.000/hari",
   },
@@ -21,8 +20,7 @@ const mpvProducts = [
     name: "Toyota Avanza - Standard MPV",
     description:
       "Perfect for daily commutes, city tours, or small group travel. Economical and reliable.",
-    imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Standard+MPV",
+    imageUrl: "/src/assets/product/avanza.jpeg",
     features: ["6 Seater", "Fuel Efficient", "Child Seat Ready"],
     price: "Mulai Rp 550.000/hari",
   },
@@ -31,8 +29,7 @@ const mpvProducts = [
     name: "Toyota Innova - Family MPV",
     description:
       "Built for family adventures with ample cargo space and robust performance. Pet-friendly option available.",
-    imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Family+MPV",
+    imageUrl: "/src/assets/product/innova.jpeg",
     features: ["8 Seater", "Large Cargo Space", "Roof Rack Option"],
     price: "Mulai Rp 700.000/hari",
   },
