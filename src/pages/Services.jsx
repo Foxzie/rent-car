@@ -59,17 +59,17 @@ const Services = () => {
                 mpv: {
                   title: "MPV",
                   desc: "Versatile family vehicles with spacious interiors.",
-                  img: "https://i.pinimg.com/1200x/d0/27/14/d0271487634e2765bfbaaf97442c239f.jpg",
+                  img: "/src/assets/innovacartun.jpg",
                 },
                 sedan: {
                   title: "Premium Sedan",
                   desc: "Luxury and performance combined for a smooth ride.",
-                  img: "https://i.pinimg.com/564x/f2/19/f5/f219f5c529de507a65c22f7a11336db0.jpg",
+                  img: "/src/assets/premiumsedancartun.jpg",
                 },
                 pickup: {
                   title: "Power Pickups",
                   desc: "Heavy-duty capability for all your hauling needs.",
-                  img: "https://i.pinimg.com/736x/74/fa/20/74fa20185736d2feccd8e801f845d4e6.jpg",
+                  img: "/src/assets/pickupkartun.jpg",
                 },
               };
 
