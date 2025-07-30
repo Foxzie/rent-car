@@ -9,8 +9,7 @@ const pickupProducts = [
     name: "Ford Ranger - Heavy-Duty Pickup",
     description:
       "Tackle any challenge with our rugged **Ford Ranger**. Engineered for heavy loads and rough terrain, this powerful pickup offers exceptional towing capacity, advanced off-road features, and a spacious cabin for both work and adventure.",
-    imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Heavy-Duty+Pickup", // Placeholder, replace with actual image
+    imageUrl: "/src/assets/product/fordranger.jpeg", // Placeholder, replace with actual image
     features: [
       "2-4 Seater",
       "High Towing Capacity",
@@ -24,8 +23,7 @@ const pickupProducts = [
     name: "Toyota Hilux - Versatile Pickup",
     description:
       "Our versatile **Toyota Hilux** is built for reliability and adaptability. Perfect for both commercial hauling and adventurous excursions, it combines robust performance with comfortable interiors and superior durability.",
-    imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Versatile+Pickup", // Placeholder, replace with actual image
+    imageUrl: "/src/assets/product/hillux.jpeg", // Placeholder, replace with actual image
     features: [
       "2-4 Seater",
       "Fuel Efficient",
@@ -39,8 +37,7 @@ const pickupProducts = [
     name: "Mitsubishi Triton - Sporty Pickup",
     description:
       "Experience dynamic performance and sleek design with the **Mitsubishi Triton**. This sporty pickup offers a comfortable ride for daily use and the power needed for weekend escapades, featuring modern amenities and advanced handling.",
-    imageUrl:
-      "https://via.placeholder.com/400x250/F8D800/FFFFFF?text=Sporty+Pickup", // Placeholder, replace with actual image
+    imageUrl: "/src/assets/product/triton.jpeg", // Placeholder, replace with actual image
     features: [
       "2-5 Seater",
       "Powerful Engine",
