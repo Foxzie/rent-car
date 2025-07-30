@@ -1,9 +1,11 @@
 import React, { Suspense } from "react"; // Import Suspense
+import AOS from "aos"; // Import AOS for initialization
+import "aos/dist/aos.css"; // Import AOS styles
 
 // Dummy data for your Sedan products
 const sedanProducts = [
   {
-    id: 1,
+    id: "toyota-camry", // Changed ID to a more descriptive string
     name: "Toyota Camry - Luxury Sedan",
     description:
       "Experience refined elegance and superior comfort with our luxury **Toyota Camry**. Perfect for executive travel, special occasions, or long family trips, it offers plush seating for four, advanced infotainment, and a serene ride.", // Updated description in English
@@ -18,7 +20,7 @@ const sedanProducts = [
     price: "Starts from Rp 800,000/day", // Price updated
   },
   {
-    id: 2,
+    id: "toyota-vios", // Changed ID to a more descriptive string
     name: "Toyota Vios - Standard Sedan",
     description:
       "Our reliable **Toyota Vios** is the perfect standard sedan for daily commutes, city tours, or small group travel. It's economical, fuel-efficient, and offers a comfortable, agile ride for urban environments.", // Updated description in English
@@ -33,7 +35,7 @@ const sedanProducts = [
     price: "Starts from Rp 550,000/day", // Price updated
   },
   {
-    id: 3,
+    id: "honda-civic-type-r", // Changed ID to a more descriptive string
     name: "Honda Civic Type R - Sport Sedan",
     description:
       "Unleash exhilarating performance with the **Honda Civic Type R** sport sedan. Designed for thrill-seekers, it combines aggressive styling with powerful engineering, offering dynamic handling and a responsive drive.", // Updated description in English
@@ -63,11 +65,19 @@ const NewTabLink = ({ to, children, className }) => (
 );
 
 const Sedan = () => {
+  // Initialize AOS when the component mounts
+  React.useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   const title = "Our Sedan Services - Andrea's Garage"; // Title updated to English
   document.title = title;
 
   // Lazily load the Footer component
-  // Path remains "/src/components/footer" as per your request
   const Footer = React.lazy(() => import("/src/components/footer"));
 
   return (
@@ -80,16 +90,13 @@ const Sedan = () => {
           data-aos-duration="1000"
         >
           <br />
-          {/* AOS retained on parent div */}
           <h1 className="text-5xl md:text-5xl font-extrabold text-amber-400 drop-shadow-lg mb-4">
             Our Best Sedan Choices for You
           </h1>{" "}
-          {/* Heading updated to English */}
           <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
             Discover unparalleled comfort and flexibility with our diverse
             selection of Sedans, ready to accompany you on every journey.
           </p>{" "}
-          {/* Paragraph updated to English */}
         </div>
 
         {/* --- */}
@@ -129,8 +136,11 @@ const Sedan = () => {
                 <p className="text-xl font-semibold text-gray-100 mb-6">
                   {product.price}
                 </p>
+                {/* Modified NewTabLink to pass carType and carName */}
                 <NewTabLink
-                  to="/rent" // Target URL for new tab
+                  to={`/rent?carType=${product.id}&carName=${encodeURIComponent(
+                    product.name
+                  )}`} // Pass ID and Name
                   className="w-full bg-amber-500 text-gray-900 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-amber-400 transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-opacity-50 text-center block"
                 >
                   Book Now
