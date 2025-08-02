@@ -1,12 +1,12 @@
-# React + Vite
+# Rent Car Website
+This is a simple rent-car website built with a focus on a clean and intuitive user experience. The project is designed to be easy to set up and customize for anyone looking to create their own car rental platform.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features
+Responsive Design: Looks great on any device, from desktops to mobile phones.
 
-Currently, two official plugins are available:
+# Car Listings: Browse a variety of cars with detailed information, including images, specifications, and rental rates.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Booking System: A straightforward booking process that allows users to select dates and complete their reservation.
 
-## Expanding the ESLint configuration
+# Technology Stack: Built with modern and popular web technologies for scalability and easy maintenance.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
