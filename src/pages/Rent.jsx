@@ -99,9 +99,9 @@ const Rent = () => {
 
   const [errors, setErrors] = useState({});
   const [availableCarOptions, setAvailableCarOptions] = useState([]);
-  const EMAILJS_SERVICE_ID = "service_i35z1hd"; // Ganti dengan Service ID dari EmailJS
-  const EMAILJS_TEMPLATE_ID = "template_p03gsyv"; // Ganti dengan Template ID dari EmailJS
-  const EMAILJS_PUBLIC_KEY = "KQ_TnlY2LNKStp8uz"; // Ganti dengan Public Key (User ID) dari EmailJS
+  const EMAILJS_SERVICE_ID = "YOUR_EMAIL_SERVICE_ID"; // Ganti dengan Service ID dari EmailJS
+  const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Ganti dengan Template ID dari EmailJS
+  const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Ganti dengan Public Key (User ID) dari EmailJS
 
   useEffect(() => {
     // Inisialisasi EmailJS dengan Public Key kamu
