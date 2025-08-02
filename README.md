@@ -4,9 +4,12 @@ This is a simple rent-car website built with a focus on a clean and intuitive us
 # Features
 Responsive Design: Looks great on any device, from desktops to mobile phones.
 
-# Car Listings: Browse a variety of cars with detailed information, including images, specifications, and rental rates.
+# Car Listings 
+Browse a variety of cars with detailed information, including images, specifications, and rental rates.
 
-# Booking System: A straightforward booking process that allows users to select dates and complete their reservation.
+# Booking System
+A straightforward booking process that allows users to select dates and complete their reservation.
 
-# Technology Stack: Built with modern and popular web technologies for scalability and easy maintenance.
+# Technology Stack
+Built with modern and popular web technologies for scalability and easy maintenance.
 
