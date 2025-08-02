@@ -37,10 +37,10 @@ const Contact = () => {
       // Send email using EmailJS
       emailjs
         .send(
-          "service_i35z1hd",
-          "template_8woze8z",
+          "YOUR_EMAIL_SERVICE_ID",
+          "YOUR_TEMPLATE_ID",
           formData,
-          "KQ_TnlY2LNKStp8uz"
+          "YOUR_PUBLIC_KEY"
         )
         .then((response) => {
           console.log(
